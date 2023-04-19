@@ -1,6 +1,7 @@
 
 
 import io.qase.api.annotation.QaseTitle;
+import io.qase.api.annotation.Step;
 import org.example.Operations;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,6 @@ class OperationTest {
    int tempValue1;
     int tempValue2;
     int tempResult;
-
     Operations operations;
 
     @BeforeEach
@@ -21,11 +21,9 @@ class OperationTest {
         operations = new Operations();
     }
 
-
-
-
     @Test
     @QaseTitle("add")
+    @Step("add random number")
     public void add() {
 
         assertEquals(4, operations.add(2, 2));
@@ -36,16 +34,19 @@ class OperationTest {
             assertEquals(tempResult, operations.add(tempValue1, tempValue2));
         }
 
-
-
-
     }
-
     @Test
     @QaseTitle("sub_witValue")
     public void sub() {
         assertEquals(4, operations.sub(8, 4));
 
+    }
+    @Test
+    @QaseTitle("add big value as integer {x} and {y}")
+    public void addBig(int x,int y){
+        x = 222222222;
+        y = 23;
+        assertEquals(222222245,operations.add(x,y));
     }
 
     @Test
@@ -64,9 +65,6 @@ class OperationTest {
     public void Divide_by_zero(){
         int x =10;
         int y =0;
-      //  int result = Operations.divide(x,y);
-
-      //  assertEquals("you can't dibid with zero",ArithmeticException.class);
         assertThrows(ArithmeticException.class, ()-> operations.divide(x,y) );
 
     }

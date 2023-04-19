@@ -6,6 +6,7 @@ import java.util.Scanner;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+
     public static void main(String[] args) {
         char operation;
 
@@ -40,9 +41,10 @@ public class Main {
         result =  operations.divide(number1,number2);
         if (number2 == 0){
             JOptionPane.showMessageDialog(null, "Du kan inte dividera med null");
-            throw  new ArithmeticException ("you can't dibid with zero");
+            throw  new ArithmeticException ("you can't divide with zero");
         }
           break;
+      default: System.out.println("you didn't write the right operation");
       }
       System.out.println("The outcome is "+ result);
 
