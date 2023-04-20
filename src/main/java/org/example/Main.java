@@ -50,9 +50,9 @@ public class Main {
       System.out.println("The outcome is "+ result);
 
     }
-    public static char getOperation(Scanner scan, char operation) {
+    public static char getOperation(Scanner scan, char o) {
         System.out.println("Which operation do you want to use?");
-         operation = scan.next().charAt(0);
-        return operation;
+         o = scan.next().charAt(3);
+        return o;
     }
 }

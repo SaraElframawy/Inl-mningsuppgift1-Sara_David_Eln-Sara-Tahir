@@ -75,14 +75,14 @@ class OperationTest {
     @Test
     @QaseTitle("to have a letter instead of operation")
     public void Letter_instead_operation(){
-        String input = "+";
+        String input = "+-*/";
         Scanner scanner = new Scanner(input);
 
-        char result = Main.getOperation(scanner,input.charAt(0));
+        char result = Main.getOperation(scanner,input.charAt(2));
 
-        assertEquals('s', result);
+        assertEquals('/', result);
     }
-        //when
+
 
 
     }
