@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        char operation;
+        char operation = 0;
 
         Operations operations = new Operations();
 
@@ -16,10 +16,11 @@ public class Main {
         int number2;
         int result = 0;
   var scan = new Scanner(System.in);
+//System.out.println("which operation do you want to use ?");
+  //operation = scan.next().charAt(0);
 
-  System.out.println("which operation do you want to use ?");
-  operation = scan.next().charAt(0);
 
+        getOperation(scan,operation);
   System.out.println("First number?");
   number1 = scan.nextInt();
         System.out.println("second number?");
@@ -48,5 +49,10 @@ public class Main {
       }
       System.out.println("The outcome is "+ result);
 
+    }
+    public static char getOperation(Scanner scan, char operation) {
+        System.out.println("Which operation do you want to use?");
+         operation = scan.next().charAt(0);
+        return operation;
     }
 }

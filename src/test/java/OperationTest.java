@@ -2,10 +2,13 @@
 
 import io.qase.api.annotation.QaseTitle;
 import io.qase.api.annotation.Step;
+import org.example.Main;
 import org.example.Operations;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Random;
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class OperationTest {
@@ -67,6 +70,17 @@ class OperationTest {
         int y =0;
         assertThrows(ArithmeticException.class, ()-> operations.divide(x,y) );
 
+    }
+
+    @Test
+    @QaseTitle("to have a letter instead of operation")
+    public void Letter_instead_operation(){
+        String input = "+";
+        Scanner scanner = new Scanner(input);
+
+        char result = Main.getOperation(scanner,input.charAt(0));
+
+        assertEquals('s', result);
     }
         //when
 
